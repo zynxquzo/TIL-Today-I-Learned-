@@ -1,4 +1,4 @@
-# [TIL] FastAPI: uvicorn, APIRouter, Pydantic를 활용한 게시판 CRUD 실습
+# [TIL] FastAPI: uvicorn, Postman, APIRouter, Pydantic를 활용한 게시판 CRUD 실습
 
 ## 1. 웹 애플리케이션 서버, uvicorn
 
@@ -10,7 +10,27 @@
 
 ---
 
-## 2. 경로 분리, APIRouter
+## 2. API 테스트 툴, Postman
+
+`uv run fastapi dev`로 서버를 실행하면 FastAPI가 자동으로 URL을 제공한다. 그런데 이 URL을 직접 브라우저에서 열면 **GET 요청만 가능**하다. POST, PUT, DELETE 등의 다른 HTTP 메서드를 테스트하려면 별도의 툴이 필요하다. 이때 **Postman**을 사용했다.
+
+* **Postman**: HTTP 요청을 자유롭게 구성하고 테스트할 수 있는 GUI 기반 API 테스트 툴이다.
+* **사용 방법**: Postman을 열고, HTTP 메서드(GET, POST, PUT, DELETE)를 선택하고, `uv run fastapi dev`에서 제공된 URL을 붙여넣고, 필요하면 요청본문(Body)을 작성한 후 Send 버튼을 누르면 응답을 바로 확인할 수 있다.
+* **Body 형식**: POST, PUT 요청 시 Body 탭에서 `raw`를 선택하고 형식을 `JSON`으로 설정한 후 데이터를 작성했다.
+
+```json
+// Postman — POST 요청본문 예시
+{
+    "title": "테스트 게시글",
+    "content": "테스트 본문 내용"
+}
+```
+
+* **왜 필요한가**: 브라우저의 주소바는 URL을 입력하여 서버에 요청을 보내는데, 이는 항상 GET 요청이다. POST나 PUT 같은 요청은 요청본문(Body)을 함께 보내야 하므로, 이를 직접 구성할 수 있는 Postman 같은 툴이 필수적이었다.
+
+---
+
+## 3. 경로 분리, APIRouter
 
 한 파일에 모든 경로를 정의하지 않고, 기능 단위로 분리하기 위해 `APIRouter`를 사용했다.
 
@@ -28,7 +48,7 @@ app.include_router(pydantic_router)
 
 ---
 
-## 3. 데이터 검증, Pydantic
+## 4. 데이터 검증, Pydantic
 
 요청본문(Request Body)의 데이터를 받아들이고 검증하는 역할을 **Pydantic**의 `BaseModel`이 맡았다.
 
@@ -51,7 +71,7 @@ class Post:                   # 저장용 클래스
 
 ---
 
-## 4. CRUD 엔드포인트 구현
+## 5. CRUD 엔드포인트 구현
 
 `APIRouter`를 활용하여 게시글의 생성(C), 조회(R), 수정(U), 삭제(D) 엔드포인트를 구현했다.
 
@@ -119,7 +139,7 @@ def delete_post(id: int):
 
 ---
 
-## 5. 프로젝트 구조 정리
+## 6. 프로젝트 구조 정리
 
 실습 시 파일을 다음과 같이 구성했다.
 
@@ -135,8 +155,9 @@ main.py              # FastAPI 앱 생성 및 라우터 등록
 
 ---
 
-## 6. 학습 포인트 (Troubleshooting)
+## 7. 학습 포인트 (Troubleshooting)
 
+* **브라우저 vs Postman**: 브라우저 주소바에 URL을 열면 항상 GET 요청만 간다. POST, PUT, DELETE 등의 메서드를 테스트하려면 Postman을 사용해야 한다. Body에 JSON을 붙여넣는 법을 익히는 것이 중요했다.
 * **global 키워드의 필요성**: 함수 내부에서 모듈 레벨 변수를 **재할당**하려면 반드시 `global`을 선언해야 했다. 이를 빠뜨리면 지역 변수로 새로 생성되어 카운터가 정상적으로 증가하지 않았다.
 * **Pydantic 모델과 저장용 클래스의 분리**: 검증 전용 모델(`PostCreate`)과 실제 저장 객체(`Post`)를 분리하면, 클라이언트에서 `id`를 임의로 지정하는 것을 방지할 수 있었다.
 * **경로 파라미터의 타입 검증**: `/{id}` 경로 파라미터에 타입 힌트를 붙으면 FastAPI가 자동으로 타입 변환과 검증을 수행하여, 잘못된 입력(예: 문자열)은 400 에러로 바로 차단되었다.
