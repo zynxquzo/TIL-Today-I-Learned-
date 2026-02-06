@@ -1,7 +1,3 @@
-제공해주신 TIL 파일의 **'5. Repository와 Service의 차이점'** 섹션을 삭제하고, 전체적인 흐름과 전문성을 유지하면서 내용을 재구성해 드립니다.
-
----
-
 # [TIL] FastAPI: 데이터베이스 연동 및 MVC 아키텍처 실습
 
 ## 1. 관심사 분리(Separation of Concerns)란?
