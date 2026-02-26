@@ -9,6 +9,19 @@ Flexbox를 활용한 반응형 웹 레이아웃 구현 연습
 ## 📝 프로젝트 개요
 FlexPractice라는 이름의 랜딩 페이지를 Flexbox를 사용하여 제작했다. 헤더, 히어로 섹션, 서비스 소개, 팀 소개, 요금제, 푸터로 구성된 완전한 웹 페이지를 구현했다.
 
+## 🎨 완성 화면
+
+### 주요 섹션별 화면
+
+#### Header / Hero Section / Services
+![헤더 / 히어로 섹션 / 서비스 소개](https://github.com/user-attachments/assets/6731f485-c3a7-4a1d-90f7-34542a8be104)
+
+#### Team / Pricing
+![팀 소개 / 요금제](https://github.com/user-attachments/assets/d636a3fe-4966-4176-b42b-eba30dc7451b)
+
+#### Footer
+![푸터](https://github.com/user-attachments/assets/08c99a69-c0fa-46cd-9e74-5253d48c3a4b)
+
 ## 🛠️ 구현한 섹션
 
 ### 1. Header
@@ -121,14 +134,6 @@ flex-shrink: 0;
 
 5. **클래스 선택자를 구체적으로 작성하면 스타일 충돌을 방지할 수 있다.**
    - `.hero-buttons .btn-primary`처럼 부모 클래스를 명시하여 다른 섹션의 버튼과 구분했다.
-
-## 완성 화면
-- Header: 로고와 네비게이션이 깔끔하게 배치되었다.
-- Hero: 파란 배경에 중앙 정렬된 텍스트와 버튼을 구현했다.
-- Services: 3개의 카드가 균등하게 배치되었다.
-- Team: 아바타와 정보가 가로로 배치된 4개의 카드를 구현했다.
-- Pricing: 중앙 카드가 강조된 3개의 요금제 카드를 구현했다.
-- Footer: 어두운 배경에 3개 섹션으로 나뉜 푸터를 구현했다.
 
 ## 참고 자료
 - [MDN - Flexbox](https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Flexible_Box_Layout)

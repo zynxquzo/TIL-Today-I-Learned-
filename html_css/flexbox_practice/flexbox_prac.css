@@ -301,6 +301,10 @@ header {
     margin: 0 auto;
 }
 
+.pricing-card .btn-primary:hover {
+    transform: translateY(-2px);
+}
+
 .pricing-card .btn-outline {
     background-color: transparent;
     color: rgb(49, 131, 255);
@@ -315,11 +319,20 @@ header {
     margin: 0 auto;
 }
 
+.pricing-card .btn-outline:hover {
+    transform: translateY(-2px);
+
+}
+
 .pricing-card.featured .btn-primary {
     background-color: white;
     color: rgb(49, 131, 255);
     width: 120px;
     margin: 0 auto;
+}
+
+.pricing-card.featured .btn-primary:hover {
+    transform: translateY(-2px);
 }
 
 footer {
