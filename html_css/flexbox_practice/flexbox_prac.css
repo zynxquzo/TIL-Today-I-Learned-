@@ -1,0 +1,360 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: white;
+}
+
+.FlexPractice {
+    color: rgb(49, 131, 255);
+    margin: 0;
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav a {
+    text-decoration: none;
+    color:  #333;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.hero {
+    background-color: rgb(49, 131, 255);
+    color: white;
+    text-align: center;
+    padding: 100px 40px; 
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    gap: 20px;
+    justify-content: center;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.hero-buttons .btn-primary {
+    background-color: white;
+    color: rgb(49, 131, 255);
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 140px;
+}
+
+.hero-buttons .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.hero-buttons .btn-secondary {
+    background-color: white;
+    color: rgb(49, 131, 255);
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 140px;
+}
+
+.hero-buttons .btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.services {
+    padding: 80px 40px;
+}
+
+.services h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 60px;
+}
+
+.service-cards {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.service-card {
+    background-color: white;
+    padding: 40px 30px;
+    border-radius: 12px;
+    text-align: center;
+    flex: 1;
+    max-width: 350px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.team {
+    padding: 80px 40px;
+    background-color: #f8f9fa;
+}
+
+.team h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 60px;
+}
+
+.team-members {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.team-member {
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 12px;
+    text-align: left;
+    flex: 1;
+    max-width: 250px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+
+.member-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    flex-shrink: 0;
+}
+.team-member h3 {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.team-member p {
+    color: #666;
+    font-size: 13px;
+}
+.pricing {
+    padding: 80px 40px;
+    background-color: white;
+}
+
+.pricing h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 60px;
+}
+
+.pricing-cards {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.pricing-card {
+    background-color: white;
+    padding: 40px 30px;
+    border-radius: 12px;
+    text-align: center;
+    flex: 1;
+    max-width: 350px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-card.featured {
+    background-color: rgb(49, 131, 255);
+    color: white;
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+}
+
+.pricing-card.featured:hover {
+    transform: scale(1.05) translateY(-5px);
+}
+
+.pricing-card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.pricing-card.featured h3 {
+    color: white;
+}
+
+.price {
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.pricing-card ul {
+    list-style: none;
+    margin-bottom: 30px;
+    flex-grow: 1;
+}
+
+.pricing-card ul li {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.pricing-card.featured ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: rgb(49, 131, 255);
+    padding: 8px 20px;
+    border: 2px solid rgb(49, 131, 255);
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.pricing-card .btn-primary {
+    background-color: white;
+    color: rgb(49, 131, 255);
+    padding: 8px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 120px;
+    margin: 0 auto;
+}
+
+.pricing-card .btn-outline {
+    background-color: transparent;
+    color: rgb(49, 131, 255);
+    padding: 8px 20px;
+    border: 2px solid rgb(49, 131, 255);
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 120px;
+    margin: 0 auto;
+}
+
+.pricing-card.featured .btn-primary {
+    background-color: white;
+    color: rgb(49, 131, 255);
+    width: 120px;
+    margin: 0 auto;
+}
+
+footer {
+    background-color: #1a1a2e;
+    color: white;
+    padding: 60px 40px 30px;
+}
+
+.footer-content {
+    display: flex;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    justify-content: space-between;
+}
+
+.footer-section h3 {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.footer-section p {
+    margin-bottom: 10px;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+footer hr {
+    border: none;
+    border-top: 1px solid #444;
+    margin: 40px auto;
+    max-width: 1200px;
+}
+.copyright {
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+}
