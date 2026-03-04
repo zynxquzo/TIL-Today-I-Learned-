@@ -1,12 +1,12 @@
 // 1번. 변수 letters에 "A", "B" 배열을 할당하고 출력한다. "Z"를 추가하여 출력한 뒤, 다시 맨 뒤 원소를 제거하고 제거된 원소와 남은 배열을 각각 출력한다.
 console.log("1번 문제");
-let letters = ['A', 'B'];
+const letters = ['A', 'B'];
 console.log(letters);
 
 letters.push('Z')
 console.log(letters);
 
-let removed = letters.pop()
+const removed = letters.pop()
 console.log(removed);
 console.log(letters);
 
@@ -14,11 +14,11 @@ console.log("-----------------");
 
 // 2번. 변수 numbers에 1, 2, 3 배열을 할당한다. 반복문을 활용해 각 원소에 2를 곱한 값을 담은 새로운 배열 newNumbers를 만들어 출력한다.
 console.log("2번 문제");
-let numbers = [1, 2, 3];
-let newNumbers =[];
+const numbers = [1, 2, 3];
+const newNumbers =[];
 
-for (let i = 0; i < numbers.length; i++) {
-    newNumbers.push(numbers[i] * 2);
+for (const num of numbers) {
+    newNumbers.push(num * 2);
 }
 console.log(newNumbers);
 
@@ -26,20 +26,21 @@ console.log("-----------------");
 
 // 3번. 변수 numbers2에 1, 2, 3, 4, 5 배열을 할당한다. 반복문을 활용해 짝수만 담은 새로운 배열 newNumbers2를 만들어 출력한다.
 console.log("3번 문제");
-let numbers2 = [1, 2, 3, 4, 5];
-let newNumbers2 = [];
+const numbers2 = [1, 2, 3, 4, 5];
+const newNumbers2 = [];
 
-for (let i = 0; i < numbers2.length; i++) {
-    if (numbers2[i] % 2 ===0) {
-        newNumbers2.push(numbers2[i])
+for (const num of numbers2) {
+    if (num % 2 === 0) {
+        newNumbers2.push(num);
     }
 } 
-console.log(newNumbers2)
+console.log(newNumbers2);
+
 console.log("-----------------");
 
 // 4번. 변수 person에 name: "이민수", age: 35, city: "부산" 객체를 할당한다. Object 메서드를 활용해 객체의 모든 키(keys), 모든 값(values), 모든 쌍(entries)을 각각 배열로 출력한다.
 console.log("4번 문제");
-let person = {
+const person = {
     name: '이민수',
     age: 35,
     city: '부산',
@@ -54,7 +55,7 @@ console.log("-----------------");
 
 // 5번. 변수 student에 name: "학생", grades: ["A", "B", "C"] 객체를 할당한다. 객체 내부의 grades 배열에 "D"를 추가하고 전체 객체를 출력한다.
 console.log("5번 문제");
-let student = {
+const student = {
     name: '학생',
     grades: ['A', 'B', 'C']
 }
@@ -77,11 +78,19 @@ for (let memo of memoList) {
     }
 }
 
-memoList.forEach(memo => {
+
+memoList.forEach((memo) => {
     if (memo.isDone === false) {
         console.log(memo);
     }
-})
+});
+
+memoList.forEach((memo) => {
+    if (!memo.isDone) {
+        console.log(memo);
+        
+    }
+});
 console.log("-----------------");
 
 // 7번. 주어진 userList 배열에서 반복문을 활용하여 age가 24세 이상인 데이터의 name만 추출하여 출력한다.
@@ -92,17 +101,16 @@ const userList = [
   { name: "홍길동", age: 25 },
 ];
 console.log("7번 문제");
-for (let user of userList) {
+for (const user of userList) {
     if (user.age >= 24) {
         console.log(user.name);
         
     }
 }
 
-userList.forEach(user => {
+userList.forEach((user) => {
     if (user.age >= 24) {
         console.log(user.name);
-        
     }
-})
+});
 console.log("-----------------");
